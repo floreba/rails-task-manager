@@ -1,0 +1,13 @@
+<h1> <%= @task.title %> </h2>
+<ul>
+  <li> Details: <%= @task.details %> </li>
+  <li> Completion: <%= @task.completed %> </li>
+</ul>
+
+<button> <%= link_to "See all tasks 🏡", home_path %> </button>
+<button> <%= link_to "Edit this task! ✍", edit_path(@task)%> </button>
+
+<button> <%= link_to "Delete this task! 🫡",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete #{@task.title}?"}
+%> </button>

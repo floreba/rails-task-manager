@@ -1,0 +1,14 @@
+<h1>INDEX</h1>
+<h2>See tasks:</h2>
+<% @tasks.each do |task| %>
+
+  <div <% if task.completed == true %>
+    <%= 'class=green' %>
+  <% end %>>
+  Task:
+  <%= link_to task.title, task_path(task) %>
+
+  </div>
+
+<% end %>
+<button> <%= link_to "Create a new task ✍️", new_path %> </button>
